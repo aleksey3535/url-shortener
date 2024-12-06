@@ -1,0 +1,26 @@
+# Use postgres/example user/password credentials
+
+services:
+  app:
+    container_name: testapp
+    build: .
+    depends_on:
+      - db
+    ports:
+      - 8001:8082
+
+  db:
+    image: postgres
+    container_name: testdb
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: qwerty
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - 5434:5432
+volumes:
+  db-data:
+
+
+  

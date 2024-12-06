@@ -1,0 +1,11 @@
+env: "local"
+db:
+  username: "postgres"
+  host: "db"
+  port: "5432"
+  dbname: "postgres"
+  sslmode: "disable"
+http_server:
+  address: ":8082"
+  timeout: 4s
+  idle_timeout: 60s
